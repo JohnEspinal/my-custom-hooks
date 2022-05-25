@@ -25,18 +25,12 @@ export const useFetch = ( url ) => {
             } )
             .then( data => {
               if(isMounted.current){
-
-                console.log("Se llamo Set state");
-                
                 setState({
                   loading: false,
                   error: null,
                   data
                 }
                 )
-                
-              }else{
-              console.log("No se llamo Set state");
                 
               }
             } )
@@ -48,7 +42,6 @@ export const useFetch = ( url ) => {
               })
               
             } )
-// eslint-disable-next-line
     }, [url])
 
   return state;
